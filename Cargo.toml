@@ -12,15 +12,19 @@ description = "RPC client for Monero daemon and wallet"
 
 [dependencies]
 anyhow = "1"
+bytes = "1"
 chrono = { version = "0.4", features = ["serde"] }
+derive_more = "0.99"
 fixed-hash = "0.8"
 hex = "0.4"
 http = "0.2"
+jsonrpsee = { version = "0.16", features = ["full"] }
 jsonrpc-core = "18"
 monero = { version = "0.18", features = ["serde"] }
 reqwest = { version = "0.11", features = ["json"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+serde_with = "2"
 tracing = "0.1"
 uuid = { version = "1.1", features = ["v4"] }
 
@@ -30,3 +34,6 @@ rand = "0.8.4"
 rustc-hex = "2.1"
 serde_test = "1.0"
 tokio = { version = "1.12.0", features = ["full"] }
+
+[patch.crates-io]
+monero = { git = "https://github.com/vorot93/monero-rs", branch = "staging" }
